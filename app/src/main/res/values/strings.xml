@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">BuildABurger</string>
+    <string name="scroll_hint">Scroll Down to see your burger!</string>
+    <string name="select_kosher">Kosher?</string>
+    <string name="like">Do you like this app?</string>
+    <string name="alert_like_ans">I like this app!</string>
+    <string name="alert_really_like_ans">I really like this app!</string>
+    <string name="we_like_you">And we like you!</string>
+    <string name="patties_tv">Patties</string>
+    <string name="onions_tv">Onions</string>
+    <string name="pickles_tv">Pickles</string>
+    <string name="cheese_tv">Cheese</string>
+    <string name="finish_btn">Done</string>
+    <string name="need_to_like">Please click the like button in the top corner!</string>
+    <string name="no_ingredients">Please enter amount for all ingredients. If you dont want any, select 0.</string>
+    <string name="reset_btn">Reset</string>
+    <string name="creator_text">App creator: Marko Katziv</string>
+    <string name="like_tool_tip">like this app?</string>
+    <string name="creator_tool_tip">Who made this app?</string>
+
+    <string-array name="spinner_items">
+        <item>@string/spinner_choose</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>@string/manual_select</item>
+    </string-array>
+    <string name="manual_select">more</string>
+    <string name="select_amount">Select amount</string>
+    <string name="alert_add">Add</string>
+    <string name="alert_cancel">Cancel</string>
+    <string name="build_btn_text">Start</string>
+    <string name="build_a_burger">Build-A-Burger</string>
+    <string name="rate_btn">Rate us please</string>
+    <string name="rate">Rate</string>
+    <string name="yourRating">Your rating:</string>
+    <string name="thanks">Thanks :)</string>
+    <string name="spinner_choose">amount</string>
+
+</resources>

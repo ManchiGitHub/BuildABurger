@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow_m700"
+    android:orientation="vertical"
+    tools:context=".BuildBurgerActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_baseline_info_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/about_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/fab_btn"
+        android:src="@drawable/ic_baseline_star_24"
+        android:tooltipText="@string/creator_tool_tip"
+        android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.2"
+            android:background="@drawable/background_burger_repeat"
+            />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/rate_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/about_btn"
+        android:src="@drawable/ic_baseline_thumb_up_alt_24"
+        android:tooltipText="@string/like_tool_tip"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/kosher_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/sunset"
+                android:text="@string/select_kosher"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/customborder">
+
+                <ImageView
+                    android:id="@+id/select_meat_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/meat" />
+
+                <TextView
+                    android:id="@+id/add_patties_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/select_meat_img"
+                    android:text="@string/patties_tv"
+                    android:textColor="@color/sunset"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/patties_amount_number"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@id/add_patties_tv"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@id/patties_spinner"
+                    android:gravity="center"
+                    android:textColor="@color/sunset"
+                    android:textSize="25sp" />
+
+                <com.example.buildaburger.CustomSpinner
+                    android:id="@+id/patties_spinner"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_alignBaseline="@+id/add_patties_tv"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/spinner_round_corners"
+                    android:entries="@array/spinner_items"
+                    android:popupBackground="@drawable/spinner_round_corners" />
+
+                <ImageView
+                    android:id="@+id/select_onion_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/select_meat_img"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/onion" />
+
+                <TextView
+                    android:id="@+id/add_onions_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_patties_tv"
+                    android:layout_alignBaseline="@id/select_onion_img"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/select_onion_img"
+                    android:text="@string/onions_tv"
+                    android:textColor="@color/sunset"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/onions_amount_number"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@id/add_onions_tv"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@id/onions_spinner"
+                    android:gravity="center"
+                    android:textColor="@color/sunset"
+                    android:textSize="25sp" />
+
+                <com.example.buildaburger.CustomSpinner
+                    android:id="@+id/onions_spinner"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_alignBaseline="@+id/add_onions_tv"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/spinner_round_corners"
+                    android:entries="@array/spinner_items"
+                    android:popupBackground="@drawable/spinner_round_corners" />
+
+                <ImageView
+                    android:id="@+id/select_pickles_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/select_onion_img"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/pickles" />
+
+                <TextView
+                    android:id="@+id/add_pickles_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_onions_tv"
+                    android:layout_alignBaseline="@id/select_pickles_img"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/select_pickles_img"
+                    android:text="@string/pickles_tv"
+                    android:textColor="@color/sunset"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/pickles_amount_number"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@id/add_pickles_tv"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@+id/pickles_spinner"
+                    android:gravity="center"
+                    android:textColor="@color/sunset"
+                    android:textSize="25sp" />
+
+                <com.example.buildaburger.CustomSpinner
+                    android:id="@+id/pickles_spinner"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_alignBaseline="@+id/add_pickles_tv"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/spinner_round_corners"
+                    android:entries="@array/spinner_items"
+                    android:popupBackground="@drawable/spinner_round_corners" />
+
+                <ImageView
+                    android:id="@+id/select_cheese_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/select_pickles_img"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/cheese" />
+
+                <TextView
+                    android:id="@+id/add_cheese_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_pickles_tv"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/select_cheese_img"
+                    android:text="@string/cheese_tv"
+                    android:textColor="@color/sunset"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/cheese_amount_number"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@id/add_cheese_tv"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@id/cheese_spinner"
+                    android:gravity="center"
+                    android:textColor="@color/sunset"
+                    android:textSize="25sp" />
+
+                <com.example.buildaburger.CustomSpinner
+                    android:id="@+id/cheese_spinner"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_alignBaseline="@+id/add_cheese_tv"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/spinner_round_corners"
+                    android:entries="@array/spinner_items"
+                    android:popupBackground="@drawable/spinner_round_corners" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/finish_btn"
+                    style="@style/num_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/finish_btn"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:backgroundTint="@null" />
+
+                <Button
+                    android:id="@+id/reset_btn"
+                    style="@style/num_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/reset_btn"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:backgroundTint="@null" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <Button
+                    android:id="@+id/rate_layout_btn"
+                    style="@style/num_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/rate_btn"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:backgroundTint="@null" />
+
+                <LinearLayout
+                    android:id="@+id/rate_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/customborder"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RatingBar
+                        android:id="@+id/rate_stars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:numStars="5"
+                        android:rating="5" />
+
+                    <Button
+                        android:id="@+id/rate_btn_submit"
+                        style="@style/num_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/rate"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:backgroundTint="@null" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/scroll_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/scroll_hint"
+                    android:textColor="@color/sunset"
+                    android:textSize="30sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/scroll_arrow"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:paddingBottom="20dp"
+                    android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    android:visibility="gone"
+                    app:tint="@color/sunset" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/burger_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customborder"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:visibility="invisible">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

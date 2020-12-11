@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sunset"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/start_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:background="@color/sunset"
+        android:gravity="center"
+        android:text="@string/build_a_burger"
+        android:textColor="@color/yellow_m700"
+        android:textSize="60sp"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/start_btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/build_burger_btn"
+            style="@style/num_btn_main_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/build_btn_text"
+            android:textColor="@color/sunset"
+            android:textSize="50sp"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

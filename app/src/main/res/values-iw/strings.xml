@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">בנה-בורגר</string>
+    <string name="scroll_hint">גלול מטה כדי לראות את ההמבורגר שלך!</string>
+    <string name="select_kosher">כשר?</string>
+    <string name="like">האם אתה אוהב את האפליקציה?</string>
+    <string name="alert_like_ans">כן!</string>
+    <string name="alert_really_like_ans">כן, מאוד!</string>
+    <string name="we_like_you">ואנחנו אוהבים אותך!</string>
+    <string name="patties_tv">קציצות</string>
+    <string name="onions_tv">בצל</string>
+    <string name="pickles_tv">מלפפון</string>
+    <string name="cheese_tv">גבינה</string>
+    <string name="finish_btn">סיום</string>
+    <string name="need_to_like">אנא לחץ קודם על כפתור הלייק בפינה העליונה</string>
+    <string name="no_ingredients">אנא בחר כמות עבור כל תוספת. אם אינך רוצה תוספת, הזן 0</string>
+    <string name="reset_btn">התחל מחדש</string>
+    <string name="creator_text">שם המפתח: מרקו קציב</string>
+    <string name="like_tool_tip">אוהב את האפליקציה?</string>
+    <string name="creator_tool_tip">מי יצר את האפליקציה?</string>
+    <string name="manual_select">יותר</string>
+    <string name="select_amount">בחר כמות</string>
+    <string name="alert_add">הוסף</string>
+    <string name="alert_cancel">ביטול</string>
+    <string name="build_btn_text">התחל</string>
+    <string name="build_a_burger">בנה-בורגר</string>
+    <string name="rate_btn">דרג אותנו בבקשה</string>
+    <string name="rate">דרג</string>
+    <string name="yourRating">הדירוג שלך:</string>
+    <string name="thanks">תודה :)</string>
+    <string name="spinner_choose">בחר כמות</string>
+</resources>
