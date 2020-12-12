@@ -18,7 +18,7 @@
         android:gravity="center"
         android:text="@string/build_a_burger"
         android:textColor="@color/yellow_m700"
-        android:textSize="60sp"
+        android:textSize="50sp"
         android:visibility="invisible" />
 
     <LinearLayout

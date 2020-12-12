@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
@@ -24,6 +25,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Locale;
 
 public class BuildBurgerActivity extends AppCompatActivity {
 
@@ -59,6 +62,7 @@ public class BuildBurgerActivity extends AppCompatActivity {
     Button resetBtn;
     Button rateLayoutBtn;
     Button submitRating;
+    Button orderBtn;
 
     FloatingActionButton fabBtn;
     FloatingActionButton aboutFabBtn;
@@ -123,14 +127,13 @@ public class BuildBurgerActivity extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(BuildBurgerActivity.this);
 
-                builder.setCancelable(false);
+                builder.setCancelable(true);
                 builder.setTitle(R.string.like);
 
-                builder.setPositiveButton(R.string.alert_really_like_ans, new DialogInterface.OnClickListener() {
-
+                builder.setPositiveButton(R.string.alert_no_ans, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast toast = Toast.makeText(BuildBurgerActivity.this, R.string.we_like_you, Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(BuildBurgerActivity.this, R.string.alertSorry, Toast.LENGTH_SHORT);
                         toast.show();
                     }
                 });
@@ -144,17 +147,15 @@ public class BuildBurgerActivity extends AppCompatActivity {
                 });
 
                 AlertDialog alertDialog = builder.create();
-
                 alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //style id
-
                 alertDialog.show();
 
-                // aligning answers in alert dialog
+                // aligning answers in alert dialog to center of window
                 Button btnPositive = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
                 Button btnNegative = alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
 
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) btnPositive.getLayoutParams();
-                layoutParams.weight = 10;
+                layoutParams.weight = 5;
                 btnPositive.setLayoutParams(layoutParams);
                 btnNegative.setLayoutParams(layoutParams);
             }
@@ -165,7 +166,6 @@ public class BuildBurgerActivity extends AppCompatActivity {
         onionsNumberTV = (TextView) findViewById(R.id.onions_amount_number);
         picklesNumberTV = (TextView) findViewById(R.id.pickles_amount_number);
         cheeseNumberTV = (TextView) findViewById(R.id.cheese_amount_number);
-
 
 
         // adapter
@@ -342,7 +342,14 @@ public class BuildBurgerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 float rating = ratingBar.getRating();
-                Toast.makeText(getApplicationContext(), rating + "", Toast.LENGTH_SHORT).show();
+
+                if (ratingBar.getRating() == 5) {
+                    Toast.makeText(getApplicationContext(), R.string.five_stars, Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), rating + "", Toast.LENGTH_SHORT).show();
+                }
+
                 Toast.makeText(getApplicationContext(), R.string.thanks, Toast.LENGTH_SHORT).show();
             }
         });
@@ -350,6 +357,17 @@ public class BuildBurgerActivity extends AppCompatActivity {
         // scroll instructions for user.
         scrollHint = findViewById(R.id.scroll_hint);
         scrollArrow = findViewById(R.id.scroll_arrow);
+
+        orderBtn = findViewById(R.id.order_btn);
+        orderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), R.string.on_our_way, Toast.LENGTH_SHORT).show();
+                orderBtn.setText(R.string.order_received);
+                orderBtn.setClickable(false);
+                orderBtn.setFocusable(false);
+            }
+        });
 
         // finish button. this will start building the burger, toasts.
         finishBtn = (Button) findViewById(R.id.finish_btn);
@@ -365,6 +383,9 @@ public class BuildBurgerActivity extends AppCompatActivity {
 
                     // Start building the burger.
                     buildBurger();
+                    orderBtn.setVisibility(View.VISIBLE);
+                    orderBtn.setClickable(true);
+                    orderBtn.setFocusable(true);
                 }
                 else {
                     Toast toast = Toast.makeText(BuildBurgerActivity.this, R.string.no_ingredients, Toast.LENGTH_SHORT);
@@ -407,6 +428,9 @@ public class BuildBurgerActivity extends AppCompatActivity {
                 finishBtn.setVisibility(View.VISIBLE);
                 scrollHint.setVisibility(View.GONE);
                 scrollArrow.setVisibility(View.GONE);
+
+                orderBtn.setText(R.string.order_now);
+                orderBtn.setVisibility(View.GONE);
 
                 burgerLayout.removeAllViews();
             }
@@ -509,10 +533,6 @@ public class BuildBurgerActivity extends AppCompatActivity {
                     amount = Integer.parseInt(amountInputSTR);
                     switchCaseOnIngredient(stringResTitle, amount);
                 }
-//                else {
-//                    Toast toast = Toast.makeText(BuildBurgerActivity.this, R.string.no_ingredients, Toast.LENGTH_SHORT);
-//                    toast.show();
-//                }
             }
         });
 
@@ -522,9 +542,8 @@ public class BuildBurgerActivity extends AppCompatActivity {
         });
 
         AlertDialog alertDialog = alert.create();
-
+        alertDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //style id
-
         alertDialog.show();
     }
 

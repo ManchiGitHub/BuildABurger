@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">בנה-בורגר</string>
     <string name="scroll_hint">גלול מטה כדי לראות את ההמבורגר שלך!</string>
-    <string name="select_kosher">כשר?</string>
+    <string name="select_kosher">כשר ?</string>
     <string name="like">האם אתה אוהב את האפליקציה?</string>
     <string name="alert_like_ans">כן!</string>
-    <string name="alert_really_like_ans">כן, מאוד!</string>
+    <string name="alert_no_ans">לא!</string>
     <string name="we_like_you">ואנחנו אוהבים אותך!</string>
     <string name="patties_tv">קציצות</string>
     <string name="onions_tv">בצל</string>
@@ -14,7 +14,7 @@
     <string name="finish_btn">סיום</string>
     <string name="need_to_like">אנא לחץ קודם על כפתור הלייק בפינה העליונה</string>
     <string name="no_ingredients">אנא בחר כמות עבור כל תוספת. אם אינך רוצה תוספת, הזן 0</string>
-    <string name="reset_btn">התחל מחדש</string>
+    <string name="reset_btn">חדש</string>
     <string name="creator_text">שם המפתח: מרקו קציב</string>
     <string name="like_tool_tip">אוהב את האפליקציה?</string>
     <string name="creator_tool_tip">מי יצר את האפליקציה?</string>
@@ -29,4 +29,9 @@
     <string name="yourRating">הדירוג שלך:</string>
     <string name="thanks">תודה :)</string>
     <string name="spinner_choose">בחר כמות</string>
+    <string name="alertSorry">אנחנו מצטערים :(</string>
+    <string name="five_stars">וואו 5 כוכבים!</string>
+    <string name="order_now">הזמן עכשיו!</string>
+    <string name="on_our_way">בדרך אליך!</string>
+    <string name="order_received">ההזמנה בוצעה</string>
 </resources>

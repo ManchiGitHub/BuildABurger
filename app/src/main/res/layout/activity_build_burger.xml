@@ -29,12 +29,11 @@
         android:tooltipText="@string/creator_tool_tip"
         android:visibility="gone" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.2"
-            android:background="@drawable/background_burger_repeat"
-            />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.2"
+        android:background="@drawable/background_burger_repeat" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/rate_btn"
@@ -52,8 +51,10 @@
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp">
 
         <LinearLayout
             android:id="@+id/main_layout"
@@ -289,6 +290,18 @@
                 android:visibility="visible">
 
                 <Button
+                    android:id="@+id/order_btn"
+                    style="@style/num_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/order_now"
+                    android:textColor="@color/yellow_m700"
+                    android:visibility="gone"
+                    android:textSize="20sp"
+                    app:backgroundTint="@null" />
+
+                <Button
                     android:id="@+id/rate_layout_btn"
                     style="@style/num_btn"
                     android:layout_width="match_parent"
@@ -306,7 +319,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="15dp"
                     android:background="@drawable/customborder"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:visibility="gone">
 
                     <RatingBar
@@ -324,11 +337,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
                         android:text="@string/rate"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         app:backgroundTint="@null" />
+
+
                 </LinearLayout>
+
 
 
                 <TextView
@@ -336,8 +353,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:gravity="center"
                     android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
                     android:text="@string/scroll_hint"
                     android:textColor="@color/sunset"
                     android:textSize="30sp"

@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">BuildABurger</string>
     <string name="scroll_hint">Scroll Down to see your burger!</string>
-    <string name="select_kosher">Kosher?</string>
+    <string name="select_kosher">Kosher ?</string>
     <string name="like">Do you like this app?</string>
-    <string name="alert_like_ans">I like this app!</string>
-    <string name="alert_really_like_ans">I really like this app!</string>
+    <string name="alert_like_ans">Yes!</string>
+    <string name="alert_no_ans">No!</string>
     <string name="we_like_you">And we like you!</string>
     <string name="patties_tv">Patties</string>
     <string name="onions_tv">Onions</string>
@@ -13,7 +13,7 @@
     <string name="finish_btn">Done</string>
     <string name="need_to_like">Please click the like button in the top corner!</string>
     <string name="no_ingredients">Please enter amount for all ingredients. If you dont want any, select 0.</string>
-    <string name="reset_btn">Reset</string>
+    <string name="reset_btn">New</string>
     <string name="creator_text">App creator: Marko Katziv</string>
     <string name="like_tool_tip">like this app?</string>
     <string name="creator_tool_tip">Who made this app?</string>
@@ -30,11 +30,16 @@
     <string name="alert_add">Add</string>
     <string name="alert_cancel">Cancel</string>
     <string name="build_btn_text">Start</string>
-    <string name="build_a_burger">Build-A-Burger</string>
+    <string name="build_a_burger">Build\n-A-\nBurger</string>
     <string name="rate_btn">Rate us please</string>
     <string name="rate">Rate</string>
     <string name="yourRating">Your rating:</string>
     <string name="thanks">Thanks :)</string>
     <string name="spinner_choose">amount</string>
+    <string name="alertSorry">We\'re sorry :(</string>
+    <string name="five_stars">wow 5 stars!</string>
+    <string name="order_now">Order Now!</string>
+    <string name="on_our_way">On our way!</string>
+    <string name="order_received">Order Received</string>
 
 </resources>

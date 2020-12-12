@@ -23,7 +23,7 @@ public class CustomSpinner extends androidx.appcompat.widget.AppCompatSpinner {
         boolean sameSelected = position == getSelectedItemPosition();
         super.setSelection(position, animate);
         if (sameSelected) {
-            // Spinner does not call the OnItemSelectedListener if the same item is selected, so do it manually now
+            // Spinner does not call the OnItemSelectedListener if the same item is selected, need to call manually
             getOnItemSelectedListener().onItemSelected(this, getSelectedView(), position, getSelectedItemId());
         }
 
@@ -34,7 +34,7 @@ public class CustomSpinner extends androidx.appcompat.widget.AppCompatSpinner {
         boolean sameSelected = position == getSelectedItemPosition();
         super.setSelection(position);
         if (sameSelected) {
-            // Spinner does not call the OnItemSelectedListener if the same item is selected, so do it manually now
+            // Spinner does not call the OnItemSelectedListener if the same item is selected, need to call manually
             getOnItemSelectedListener().onItemSelected(this, getSelectedView(), position, getSelectedItemId());
         }
     }
