@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BuildABurger">
         <activity android:name=".MainActivity"
-            android:launchMode="singleInstance">
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,8 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BuildBurgerActivity"
-            android:launchMode="singleInstance">
+            android:name=".BuildBurgerActivity">
 
         </activity>
     </application>

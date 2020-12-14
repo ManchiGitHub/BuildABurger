@@ -34,4 +34,8 @@
     <string name="order_now">הזמן עכשיו!</string>
     <string name="on_our_way">בדרך אליך!</string>
     <string name="order_received">ההזמנה בוצעה</string>
+    <string name="enter_name">אנא הזן את שמך</string>
+    <string name="anonymous_name">"אנונימי "</string>
+    <string name="welcome_user">שלום</string>
+    <string name="back_btn">חזור</string>
 </resources>

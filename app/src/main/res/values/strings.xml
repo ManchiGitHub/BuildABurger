@@ -41,5 +41,9 @@
     <string name="order_now">Order Now!</string>
     <string name="on_our_way">On our way!</string>
     <string name="order_received">Order Received</string>
+    <string name="enter_name">Please enter your name</string>
+    <string name="anonymous_name">" Anonymous"</string>
+    <string name="welcome_user">Hello</string>
+    <string name="back_btn">Back</string>
 
 </resources>
