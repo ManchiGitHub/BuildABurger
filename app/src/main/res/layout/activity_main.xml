@@ -18,7 +18,7 @@
         android:text="@string/build_a_burger"
         android:textColor="@color/yellow_m700"
         android:textSize="50sp"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
     <EditText
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
         android:alpha="0.85"
         android:textColor="@color/yellow_m700"
         android:textSize="25sp"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:id="@+id/name_et"/>
 
     <LinearLayout
@@ -39,7 +39,7 @@
         android:layout_weight="5"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="invisible">
 
         <Button
             android:id="@+id/build_burger_btn"
